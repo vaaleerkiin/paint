@@ -1,0 +1,17 @@
+.cursor-circle {
+  border: 2px solid #000000;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, opacity 0.2s ease, width 0.2s ease,
+    height 0.2s ease;
+  background-color: transparent;
+}
+
+.cursor-circle:hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+}
