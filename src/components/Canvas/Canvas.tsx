@@ -14,9 +14,11 @@ export const Canvas: React.FC = () => {
   const ctx = canvas ? canvas.getContext("2d") : null;
 
   useEffect(() => {
-    const prevCoords = JSON.parse(localStorage.getItem("coords")!) as Array<
-      ICoords | "mouseup"
-    >;
+    const prevCoords = localStorage.getItem("coords")
+      ? (JSON.parse(localStorage.getItem("coords")!) as Array<
+          ICoords | "mouseup"
+        >)
+      : [];
 
     if (!ctx) return;
 
