@@ -14,6 +14,8 @@ export const Canvas: React.FC = () => {
   const ctx = canvas ? canvas.getContext("2d") : null;
 
   useEffect(() => {
+    if (init) setPosition({ x: -100, y: -100 });
+
     const prevCoords = localStorage.getItem("coords")
       ? (JSON.parse(localStorage.getItem("coords")!) as Array<
           ICoords | "mouseup"
@@ -178,6 +180,7 @@ export const Canvas: React.FC = () => {
         onMouseMove={drawMove}
         onMouseUp={() => {
           setMouseDown(false);
+
           ctx?.beginPath();
           setCoords((prev) => {
             return [...prev, "mouseup"];
