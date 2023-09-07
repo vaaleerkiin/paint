@@ -152,6 +152,7 @@ export const Canvas: React.FC = () => {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
     CanvasValue.setClear(false);
+    setCoords([]);
     localStorage.setItem("coords", JSON.stringify([]));
   }, [CanvasValue, canvas, ctx]);
 
